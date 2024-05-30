@@ -13,7 +13,7 @@
 
     <groupId>org.example</groupId>
     <artifactId>learnJunit</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.2-RELESES</version>
     <packaging>jar</packaging>
 
     <name>learnJunit</name>
@@ -38,4 +38,26 @@
             <scope>provided</scope>
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+    <distributionManagement>
+        <repository>
+            <id>maven-releases</id>
+            <name>maven-releases</name>
+            <url>http://106.54.16.182:10001/repository/maven-releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>maven-snapshot</id>
+            <name>maven-snapshot</name>
+            <url>http://106.54.16.182:10001/repository/maven-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
 </project>
