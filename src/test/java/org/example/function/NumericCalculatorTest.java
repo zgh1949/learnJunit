@@ -1,8 +1,10 @@
 package org.example.function;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class NumericCalculatorTest {
 
@@ -16,24 +18,30 @@ class NumericCalculatorTest {
     @Test
     void testEvalAdd() {
         final String expression = "1+2";
-        Assertions.assertEquals(calculator.eval(expression), 3.0D);
+        assertEquals(calculator.eval(expression), 3.0D);
     }
 
     @Test
     void testEvalSubtract() {
         final String expression = "3-1";
-        Assertions.assertEquals(calculator.eval(expression), 2.0D);
+        assertEquals(calculator.eval(expression), 2.0D);
     }
 
     @Test
     void testEvalMultiply() {
         final String expression = "3*2";
-        Assertions.assertEquals(calculator.eval(expression), 6.0D);
+        assertEquals(calculator.eval(expression), 6.0D);
     }
 
     @Test
     void testEvalDivide() {
         final String expression = "3/2";
-        Assertions.assertEquals(calculator.eval(expression), 1.5D);
+        assertEquals(calculator.eval(expression), 1.5D);
+    }
+
+    @Test
+    void testEvalException() {
+        final String expression = "1%2";
+        assertThrows(UnsupportedOperationException.class, () -> calculator.eval(expression));
     }
 }

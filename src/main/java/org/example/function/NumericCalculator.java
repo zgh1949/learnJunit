@@ -18,6 +18,6 @@ public class NumericCalculator {
             return Double.parseDouble(data[0]) / Double.parseDouble(data[1]);
         }
 
-        return 0.0D;
+        throw new UnsupportedOperationException();
     }
 }
