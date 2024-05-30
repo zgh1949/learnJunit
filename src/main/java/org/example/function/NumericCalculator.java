@@ -2,6 +2,7 @@ package org.example.function;
 
 public class NumericCalculator {
     public double eval(String expression) {
+        // 优化
         final String[] data;
         if (expression.contains("+")) {
             data = expression.split("\\+");
